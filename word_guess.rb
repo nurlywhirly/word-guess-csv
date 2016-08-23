@@ -1,11 +1,18 @@
+require 'csv'
+
 class WordGuess
   def initialize(debug = false)
     # are we in debug mode?
     @debug = debug
 
+    csv_array = CSV.read("words.csv")
+    puts "#{csv_array.inspect}"
+
+
     # possible words, selected at random
     @words = {
-      "e" => %w(dog cat bug hat cap lit kin fan fin fun tan ten tin ton),
+      "e" => %w(cat
+      ),
       "m" => %w(plain claim brine crime alive bride skine drive slime stein jumpy),
       "h" => %w(
           machiavellian prestidigitation plenipotentiary quattuordecillion
